@@ -12,7 +12,6 @@ namespace WPFTestHotspotExample
          AssociatedObject.MouseDown += OnMouseDown;
          AssociatedObject.MouseUp += OnMouseUp;
          AssociatedObject.MouseMove += OnMouseMove;
-         AssociatedObject.MouseLeave += OnMouseLeave;
       }
 
       public static readonly DependencyProperty AnchorXProperty =
@@ -37,6 +36,9 @@ namespace WPFTestHotspotExample
 
       private void OnMouseDown( object sender, System.Windows.Input.MouseButtonEventArgs e )
       {
+         if ( !AssociatedObject.CaptureMouse() )
+            return;
+
          _mouseDown = true;
 
          var pos = e.GetPosition( AssociatedObject );
@@ -46,7 +48,12 @@ namespace WPFTestHotspotExample
 
       private void OnMouseUp( object sender, System.Windows.Input.MouseButtonEventArgs e )
       {
+         if ( !_mouseDown )
+            return;
+
          _mouseDown = false;
+
+         AssociatedObject.ReleaseMouseCapture();
 
          var pos = e.GetPosition( AssociatedObject );
          AnchorX = pos.X;
@@ -61,11 +68,6 @@ namespace WPFTestHotspotExample
          var pos = e.GetPosition( AssociatedObject );
          AnchorX = pos.X;
          AnchorY = pos.Y;
-      }
-
-      private void OnMouseLeave( object sender, System.Windows.Input.MouseEventArgs e )
-      {
-         _mouseDown = false;
       }
    }
 }

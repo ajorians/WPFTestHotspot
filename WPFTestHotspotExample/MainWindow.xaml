@@ -59,13 +59,13 @@
                      X2="{Binding AnchorX, Mode=OneWay}"
                      Y2="1000"
                      Stroke="Red"
-                     StrokeThickness="4" />
+                     StrokeThickness="2" />
                <Line X1="0"
                      Y1="{Binding AnchorY, Mode=OneWay}"
                      X2="1000"
                      Y2="{Binding AnchorY, Mode=OneWay}"
                      Stroke="Red"
-                     StrokeThickness="4" />
+                     StrokeThickness="2" />
                <Interactivity:Interaction.Behaviors>
                   <CursorHotspotAttachedBehavior:CursorHotspotAttachedBehavior AnchorX="{Binding AnchorX, Mode=TwoWay}"
                                                                                AnchorY="{Binding AnchorY, Mode=TwoWay}" />
