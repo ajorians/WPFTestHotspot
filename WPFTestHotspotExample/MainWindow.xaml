@@ -23,28 +23,55 @@
       <Border Grid.Row="1"
               Grid.Column="1"
               CornerRadius="5">
-         <Canvas ClipToBounds="True">
-            <Canvas.Background>
-               <ImageBrush ImageSource="{Binding CursorBitmapSource, Mode=OneWay}"
-                           Stretch="UniformToFill" />
-            </Canvas.Background>
-            <Line X1="{Binding AnchorX, Mode=OneWay}"
-                  Y1="0"
-                  X2="{Binding AnchorX, Mode=OneWay}"
-                  Y2="1000"
-                  Stroke="Red"
-                  StrokeThickness="4" />
-            <Line X1="0"
-                  Y1="{Binding AnchorY, Mode=OneWay}"
-                  X2="1000"
-                  Y2="{Binding AnchorY, Mode=OneWay}"
-                  Stroke="Red"
-                  StrokeThickness="4" />
-            <Interactivity:Interaction.Behaviors>
-               <CursorHotspotAttachedBehavior:CursorHotspotAttachedBehavior AnchorX="{Binding AnchorX, Mode=TwoWay}"
-                                                                            AnchorY="{Binding AnchorY, Mode=TwoWay}" />
-            </Interactivity:Interaction.Behaviors>
-         </Canvas>
+         <Grid>
+            <Grid.Background>
+               <DrawingBrush Stretch="None"
+                             TileMode="Tile"
+                             Viewport="0,0,20,20"
+                             ViewportUnits="Absolute">
+                  <DrawingBrush.Drawing>
+                     <DrawingGroup>
+                        <GeometryDrawing Brush="LightGray">
+                           <GeometryDrawing.Geometry>
+                              <RectangleGeometry Rect="0,0,20,20" />
+                           </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+                        <GeometryDrawing Brush="DarkGray">
+                           <GeometryDrawing.Geometry>
+                              <GeometryGroup>
+                                 <RectangleGeometry Rect="0,0,10,10" />
+                                 <RectangleGeometry Rect="10,10,10,10" />
+                              </GeometryGroup>
+                           </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+
+                     </DrawingGroup>
+                  </DrawingBrush.Drawing>
+               </DrawingBrush>
+            </Grid.Background>
+            <Canvas ClipToBounds="True">
+               <Canvas.Background>
+                  <ImageBrush ImageSource="{Binding CursorBitmapSource, Mode=OneWay}"
+                         Stretch="Uniform" />
+               </Canvas.Background>
+               <Line X1="{Binding AnchorX, Mode=OneWay}"
+                     Y1="0"
+                     X2="{Binding AnchorX, Mode=OneWay}"
+                     Y2="1000"
+                     Stroke="Red"
+                     StrokeThickness="4" />
+               <Line X1="0"
+                     Y1="{Binding AnchorY, Mode=OneWay}"
+                     X2="1000"
+                     Y2="{Binding AnchorY, Mode=OneWay}"
+                     Stroke="Red"
+                     StrokeThickness="4" />
+               <Interactivity:Interaction.Behaviors>
+                  <CursorHotspotAttachedBehavior:CursorHotspotAttachedBehavior AnchorX="{Binding AnchorX, Mode=TwoWay}"
+                                                                               AnchorY="{Binding AnchorY, Mode=TwoWay}" />
+               </Interactivity:Interaction.Behaviors>
+            </Canvas>
+         </Grid>
       </Border>
 
       <StackPanel Grid.Row="1"
