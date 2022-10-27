@@ -3,6 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Interactivity="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:CursorHotspotAttachedBehavior="clr-namespace:WPFTestHotspotExample"
         mc:Ignorable="d"
         Title="MainWindow"
         Height="450"
@@ -38,6 +40,10 @@
                   Y2="{Binding AnchorY, Mode=OneWay}"
                   Stroke="Red"
                   StrokeThickness="4" />
+            <Interactivity:Interaction.Behaviors>
+               <CursorHotspotAttachedBehavior:CursorHotspotAttachedBehavior AnchorX="{Binding AnchorX, Mode=TwoWay}"
+                                                                            AnchorY="{Binding AnchorY, Mode=TwoWay}" />
+            </Interactivity:Interaction.Behaviors>
          </Canvas>
       </Border>
 

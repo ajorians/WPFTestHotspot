@@ -44,8 +44,8 @@ namespace WPFTestHotspotExample
          }
       }
 
-      private int _anchorx;
-      public int AnchorX
+      private double _anchorx;
+      public double AnchorX
       {
          get => _anchorx;
          set
@@ -58,8 +58,8 @@ namespace WPFTestHotspotExample
          }
       }
 
-      private int _anchory;
-      public int AnchorY
+      private double _anchory;
+      public double AnchorY
       {
          get => _anchory;
          set

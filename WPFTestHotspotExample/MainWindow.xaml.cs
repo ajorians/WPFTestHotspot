@@ -26,5 +26,20 @@ namespace WPFTestHotspotExample
          InitializeComponent();
          DataContext = new VM();
       }
+
+      private void Canvas_MouseDown( object sender, MouseButtonEventArgs e )
+      {
+
+      }
+
+      private void Canvas_MouseUp( object sender, MouseButtonEventArgs e )
+      {
+
+      }
+
+      private void Canvas_MouseMove( object sender, MouseEventArgs e )
+      {
+
+      }
    }
 }
