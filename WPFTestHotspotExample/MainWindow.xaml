@@ -22,9 +22,8 @@
       </Grid.ColumnDefinitions>
       <Border Grid.Row="1"
               Grid.Column="1"
-              CornerRadius="5">
-         <Grid>
-            <Grid.Background>
+              CornerRadius="15">
+         <Border.Background>
                <DrawingBrush Stretch="None"
                              TileMode="Tile"
                              Viewport="0,0,20,20"
@@ -48,30 +47,29 @@
                      </DrawingGroup>
                   </DrawingBrush.Drawing>
                </DrawingBrush>
-            </Grid.Background>
-            <Canvas ClipToBounds="True">
-               <Canvas.Background>
-                  <ImageBrush ImageSource="{Binding CursorBitmapSource, Mode=OneWay}"
-                         Stretch="Uniform" />
-               </Canvas.Background>
-               <Line X1="{Binding AnchorX, Mode=OneWay}"
-                     Y1="0"
-                     X2="{Binding AnchorX, Mode=OneWay}"
-                     Y2="1000"
-                     Stroke="Red"
-                     StrokeThickness="2" />
-               <Line X1="0"
-                     Y1="{Binding AnchorY, Mode=OneWay}"
-                     X2="1000"
-                     Y2="{Binding AnchorY, Mode=OneWay}"
-                     Stroke="Red"
-                     StrokeThickness="2" />
-               <Interactivity:Interaction.Behaviors>
-                  <CursorHotspotAttachedBehavior:CursorHotspotAttachedBehavior AnchorX="{Binding AnchorX, Mode=TwoWay}"
-                                                                               AnchorY="{Binding AnchorY, Mode=TwoWay}" />
-               </Interactivity:Interaction.Behaviors>
-            </Canvas>
-         </Grid>
+            </Border.Background>
+         <Canvas ClipToBounds="True">
+            <Canvas.Background>
+               <ImageBrush ImageSource="{Binding CursorBitmapSource, Mode=OneWay}"
+                           Stretch="Uniform" />
+            </Canvas.Background>
+            <Line X1="{Binding AnchorX, Mode=OneWay}"
+                  Y1="0"
+                  X2="{Binding AnchorX, Mode=OneWay}"
+                  Y2="1000"
+                  Stroke="Red"
+                  StrokeThickness="2" />
+            <Line X1="0"
+                  Y1="{Binding AnchorY, Mode=OneWay}"
+                  X2="1000"
+                  Y2="{Binding AnchorY, Mode=OneWay}"
+                  Stroke="Red"
+                  StrokeThickness="2" />
+            <Interactivity:Interaction.Behaviors>
+               <CursorHotspotAttachedBehavior:CursorHotspotAttachedBehavior AnchorX="{Binding AnchorX, Mode=TwoWay}"
+                                                                            AnchorY="{Binding AnchorY, Mode=TwoWay}" />
+            </Interactivity:Interaction.Behaviors>
+         </Canvas>
       </Border>
 
       <StackPanel Grid.Row="1"
